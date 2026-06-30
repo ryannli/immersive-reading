@@ -147,31 +147,6 @@ skills/
     scripts/
 ```
 
-## Development
-
-Validate sample article data:
-
-```bash
-node skills/immersive-reading/scripts/validate-article-data.mjs \
-  skills/immersive-reading/assets/reader-template/src/articles/sample-reading/data.js
-```
-
-Smoke test the template:
-
-```bash
-node skills/immersive-reading/scripts/smoke-test-reader.mjs \
-  skills/immersive-reading/assets/reader-template
-```
-
-Scaffold a reader:
-
-```bash
-node skills/immersive-reading/scripts/scaffold-reader.mjs \
-  --article-data skills/immersive-reading/assets/reader-template/src/articles/sample-reading/data.js \
-  --out /tmp/sample-reading-edition \
-  --force
-```
-
 ## License
 
 MIT.
