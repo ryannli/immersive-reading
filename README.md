@@ -2,16 +2,16 @@
 
 # Immersive Reading
 
-<strong>Turn long-form material into cinematic, annotatable Reading Editions.</strong>
+<strong>A reusable skill for turning long-form material into cinematic Reading Editions.</strong>
 
-Give your agent an essay, post, transcript, note, or paper. Get back a polished
-static reading site with chapters, transitions, search, highlights, notes, and
-optional bilingual reading.
+Bring an essay, post, transcript, note, or paper. Get back a polished static
+reading site with chapters, transitions, search, highlights, notes, and optional
+bilingual reading.
 
 <br>
 
 [![Start](https://img.shields.io/badge/Quick_Start-Install_now-111111?style=for-the-badge&labelColor=9A5A25)](#quick-start)
-[![Skill](https://img.shields.io/badge/Agent_Skill-immersive--reading-111111?style=for-the-badge&labelColor=5B6675)](skills/immersive-reading/SKILL.md)
+[![Skill](https://img.shields.io/badge/Reusable_Skill-immersive--reading-111111?style=for-the-badge&labelColor=5B6675)](skills/immersive-reading/SKILL.md)
 [![Demo](https://img.shields.io/badge/Demo-How_to_Do_Great_Work-111111?style=for-the-badge&labelColor=B87941)](docs/media/how-to-do-great-work-after.mp4)
 
 </div>
