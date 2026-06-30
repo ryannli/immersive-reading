@@ -2,7 +2,7 @@
 
 # Immersive Reading
 
-<strong>A reusable skill for turning long-form material into cinematic Reading Editions.</strong>
+<strong>A reusable skill for turning long-form material into immersive Reading Editions.</strong>
 
 Bring an essay, post, transcript, note, or paper. Get back a polished static
 reading site with chapters, transitions, search, highlights, notes, and optional
@@ -25,7 +25,7 @@ Example: Paul Graham's epic essay,
 
 | Before | After |
 | --- | --- |
-| [![Before: plain essay page](docs/media/how-to-do-great-work-before.gif)](https://paulgraham.com/greatwork.html) | [![After: cinematic Reading Edition](docs/media/how-to-do-great-work-after.gif)](https://x.com/ranli_thinker/status/2071738620860682365) |
+| [![Before: plain essay page](docs/media/how-to-do-great-work-before.gif)](https://paulgraham.com/greatwork.html) | [![After: immersive Reading Edition](docs/media/how-to-do-great-work-after.gif)](https://x.com/ranli_thinker/status/2071738620860682365) |
 | [Open original essay](https://paulgraham.com/greatwork.html) | [Open X post to watch the video](https://x.com/ranli_thinker/status/2071738620860682365) |
 
 <br>
@@ -35,7 +35,7 @@ Example: Paul Graham's epic essay,
 <table>
   <tr>
     <td width="33%" valign="top">
-      <strong>Cinematic structure</strong><br>
+      <strong>Chaptered reading flow</strong><br>
       <sub>Chapter openings, section beats, anchor quotes, and scroll-driven transitions.</sub>
     </td>
     <td width="33%" valign="top">
@@ -54,7 +54,7 @@ Example: Paul Graham's epic essay,
     </td>
     <td width="33%" valign="top">
       <strong>Light and dark mode</strong><br>
-      <sub>A calm porcelain reading surface plus a cinematic dark mode.</sub>
+      <sub>A calm porcelain reading surface plus a focused dark mode.</sub>
     </td>
     <td width="33%" valign="top">
       <strong>Agent-friendly scaffolding</strong><br>
@@ -89,7 +89,7 @@ Example: Paul Graham's epic essay,
 ## Quick Start
 
 <details open>
-<summary><strong>Claude Code</strong> <sub>recommended</sub></summary>
+<summary><strong>Claude Code</strong></summary>
 
 Install from the public repo as a Claude Code plugin.
 
@@ -114,7 +114,7 @@ Use it in Claude Code with:
 </details>
 
 <details>
-<summary><strong>Codex</strong> <sub>skill-first</sub></summary>
+<summary><strong>Codex</strong></summary>
 
 Codex uses this repo as a skill, not a plugin.
 
@@ -151,15 +151,6 @@ agy plugin install https://github.com/ryannli/immersive-reading.git
 </details>
 
 <details>
-<summary><strong>Claude Code without plugins</strong></summary>
-
-```bash
-npx --yes github:ryannli/immersive-reading install claude
-```
-
-</details>
-
-<details>
 <summary><strong>Other SKILL.md-compatible agents</strong></summary>
 
 The `npx` commands run a small installer that copies `skills/immersive-reading`
@@ -178,15 +169,6 @@ git clone https://github.com/ryannli/immersive-reading.git
 cd immersive-reading
 sh setup codex
 ```
-
-</details>
-
-<details>
-<summary><strong>Why is there a bin folder?</strong></summary>
-
-`bin/immersive-reading.mjs` is the tiny installer used by the `npx` commands
-above. It copies the bundled skill into Claude, Codex, Cursor, or a generic
-agent skills directory. It is not part of generated reading websites.
 
 </details>
 

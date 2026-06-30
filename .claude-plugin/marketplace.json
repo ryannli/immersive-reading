@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "immersive-reading",
-  "description": "Turn long-form essays, posts, transcripts, and notes into cinematic interactive Reading Editions.",
+  "description": "Turn long-form essays, posts, transcripts, and notes into immersive Reading Editions.",
   "owner": {
     "name": "Ran Li",
     "url": "https://github.com/ryannli"
@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "immersive-reading",
-      "description": "A reusable reader template and agent skill for chaptered reading sites with cinematic transitions, search, highlights, notes, optional bilingual text, and light/dark mode.",
+      "description": "A reusable reader template and agent skill for chaptered reading sites with scroll-driven transitions, search, highlights, notes, optional bilingual text, and light/dark mode.",
       "source": {
         "source": "github",
         "repo": "ryannli/immersive-reading"
