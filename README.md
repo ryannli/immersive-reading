@@ -1,7 +1,24 @@
+<div align="center">
+
 # Immersive Reading
 
-A Claude Code / Codex skill for turning long-form material into cinematic
-reading websites.
+<strong>Turn long-form material into cinematic, annotatable Reading Editions.</strong>
+
+Give your agent an essay, post, transcript, note, or paper. Get back a polished
+static reading site with chapters, transitions, search, highlights, notes, and
+optional bilingual reading.
+
+<br>
+
+[![Start](https://img.shields.io/badge/Quick_Start-Install_now-111111?style=for-the-badge&labelColor=9A5A25)](#quick-start)
+[![Skill](https://img.shields.io/badge/Agent_Skill-immersive--reading-111111?style=for-the-badge&labelColor=5B6675)](skills/immersive-reading/SKILL.md)
+[![Demo](https://img.shields.io/badge/Demo-How_to_Do_Great_Work-111111?style=for-the-badge&labelColor=B87941)](docs/media/how-to-do-great-work-after.mp4)
+
+</div>
+
+<br>
+
+## A Reading Edition, Not A Summary
 
 Example: Paul Graham's epic essay,
 [How to Do Great Work](https://paulgraham.com/greatwork.html).
@@ -9,23 +26,70 @@ Example: Paul Graham's epic essay,
 | Before | After |
 | --- | --- |
 | [![Before: plain essay page](docs/media/how-to-do-great-work-before.gif)](docs/media/how-to-do-great-work-before.mp4) | [![After: cinematic Reading Edition](docs/media/how-to-do-great-work-after.gif)](docs/media/how-to-do-great-work-after.mp4) |
-| [Open full video](docs/media/how-to-do-great-work-before.mp4) | [Open full video](docs/media/how-to-do-great-work-after.mp4) |
+| [Open before video](docs/media/how-to-do-great-work-before.mp4) | [Open after video](docs/media/how-to-do-great-work-after.mp4) |
+
+<br>
 
 ## What It Builds
 
-One source file becomes a local Reading Edition with:
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <strong>Cinematic structure</strong><br>
+      <sub>Chapter openings, section beats, anchor quotes, and scroll-driven transitions.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <strong>Study tools</strong><br>
+      <sub>Search, highlights, notes, copyable notes, and source-aware reading flow.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <strong>Reusable template</strong><br>
+      <sub>Swap in new content and produce a static site ready for local use or Vercel.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <strong>Optional bilingual mode</strong><br>
+      <sub>Line-by-line reading support when the source should be studied across languages.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <strong>Light and dark mode</strong><br>
+      <sub>A calm porcelain reading surface plus a cinematic dark mode.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <strong>Agent-friendly scaffolding</strong><br>
+      <sub>Bundled scripts validate data, scaffold the reader, and smoke-test the output.</sub>
+    </td>
+  </tr>
+</table>
 
-- chapter and section structure
-- cinematic openings and scroll transitions
-- search, highlights, notes, and copyable notes
-- optional bilingual line-by-line reading mode
-- light and dark mode
-- a static site you can run locally or deploy to Vercel
+<br>
+
+## How It Works
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <strong>1. Bring source material</strong><br>
+      <sub>Essay, blog post, lecture, transcript, note, or paper.</sub>
+    </td>
+    <td align="center" width="33%">
+      <strong>2. Let the skill shape it</strong><br>
+      <sub>Chapters, sections, quotes, optional translation, and reader data.</sub>
+    </td>
+    <td align="center" width="33%">
+      <strong>3. Open the site</strong><br>
+      <sub>A polished Reading Edition with the interaction details already wired.</sub>
+    </td>
+  </tr>
+</table>
+
+<br>
 
 ## Quick Start
 
 <details open>
-<summary><strong>Claude Code (recommended)</strong></summary>
+<summary><strong>Claude Code</strong> <sub>recommended</sub></summary>
 
 Install from the public repo as a Claude Code plugin.
 
@@ -50,9 +114,9 @@ Use it in Claude Code with:
 </details>
 
 <details>
-<summary><strong>Codex</strong></summary>
+<summary><strong>Codex</strong> <sub>skill-first</sub></summary>
 
-Codex uses this repo as a skill, not a plugin. Install it with:
+Codex uses this repo as a skill, not a plugin.
 
 ```text
 $skill-installer https://github.com/ryannli/immersive-reading/tree/main/skills/immersive-reading
@@ -126,9 +190,9 @@ agent skills directory. It is not part of generated reading websites.
 
 </details>
 
-## First Prompt
+<br>
 
-Open a new Claude Code or Codex session and ask:
+## First Prompt
 
 ```text
 Use $immersive-reading to turn ./article.md into a Reading Edition at ./reading-edition.
