@@ -12,7 +12,7 @@ bilingual reading.
 
 [![Start](https://img.shields.io/badge/Quick_Start-Install_now-111111?style=for-the-badge&labelColor=9A5A25)](#quick-start)
 [![Skill](https://img.shields.io/badge/Reusable_Skill-immersive--reading-111111?style=for-the-badge&labelColor=5B6675)](skills/immersive-reading/SKILL.md)
-[![Demo](https://img.shields.io/badge/Demo-How_to_Do_Great_Work-111111?style=for-the-badge&labelColor=B87941)](docs/media/how-to-do-great-work-after.mp4)
+[![Demo](https://img.shields.io/badge/Demo-Watch_the_X_post-111111?style=for-the-badge&labelColor=B87941)](https://x.com/ranli_thinker/status/2071738620860682365)
 
 </div>
 
@@ -25,8 +25,8 @@ Example: Paul Graham's epic essay,
 
 | Before | After |
 | --- | --- |
-| [![Before: plain essay page](docs/media/how-to-do-great-work-before.gif)](docs/media/how-to-do-great-work-before.mp4) | [![After: cinematic Reading Edition](docs/media/how-to-do-great-work-after.gif)](docs/media/how-to-do-great-work-after.mp4) |
-| [Open before video](docs/media/how-to-do-great-work-before.mp4) | [Open after video](docs/media/how-to-do-great-work-after.mp4) |
+| [![Before: plain essay page](docs/media/how-to-do-great-work-before.gif)](https://paulgraham.com/greatwork.html) | [![After: cinematic Reading Edition](docs/media/how-to-do-great-work-after.gif)](https://x.com/ranli_thinker/status/2071738620860682365) |
+| [Open original essay](https://paulgraham.com/greatwork.html) | [Open X post to watch the video](https://x.com/ranli_thinker/status/2071738620860682365) |
 
 <br>
 
