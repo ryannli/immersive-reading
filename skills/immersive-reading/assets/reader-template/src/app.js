@@ -48,7 +48,7 @@ const events={track(){},markSection(){},markChapter(){}};
 function applyArticleChrome(){
   document.documentElement.dataset.article=ARTICLE.id;
   document.documentElement.lang=PRIMARY_LANGUAGE.code;
-  document.title=`${textOf(ARTICLE.title)} · Reading Edition`;
+  document.title=`${textOf(ARTICLE.title)} · Immersive Reading`;
   const meta=document.querySelector('meta[name="description"]');if(meta)meta.content=textOf(ARTICLE.description);
   const brand=$('.brand');if(brand)brand.textContent=textOf(ARTICLE.title);
   const door=$('#doorIntro');if(door)door.setAttribute('aria-label',ARTICLE.door?.ariaLabel||'Reading entrance');

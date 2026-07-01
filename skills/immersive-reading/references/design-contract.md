@@ -14,7 +14,7 @@ Use this before changing template UI or animation.
 
 ## Visual Tone
 
-The template should feel like a serious reading edition, not a marketing landing page. Use the existing typography, particle field, restrained color palette, and cinematic chapter transitions. Do not add decorative cards, gradient blobs, or extra background clutter.
+The template should feel like a serious learning space, not a marketing landing page. Use the existing typography, particle field, restrained color palette, and cinematic chapter transitions. Do not add decorative cards, gradient blobs, or extra background clutter.
 
 ## Mobile
 

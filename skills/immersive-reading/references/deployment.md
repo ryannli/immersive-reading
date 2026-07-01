@@ -5,8 +5,7 @@ The generated reader is a static site. It can be deployed to Vercel, Netlify, Gi
 ## Local Preview
 
 ```bash
-cd /path/to/generated-reader
-python3 -m http.server 8791
+node /path/to/skill/scripts/serve-reader.mjs /path/to/generated-reader --port 8791
 ```
 
 Open `http://127.0.0.1:8791/`.

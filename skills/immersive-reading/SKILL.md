@@ -1,6 +1,6 @@
 ---
 name: immersive-reading
-description: Build immersive interactive reading editions from long-form learning material. Use when the user wants to convert a blog post, essay, transcript, note, paper, or other long content into a polished static reader with chapters, sections, quotes, search, highlights, notes, optional bilingual text, light/dark mode, and source attribution.
+description: Turn long-form source material into bespoke interactive learning spaces. Use when the user wants to convert a blog post, essay, transcript, note, paper, or other long content into a polished static reader with chapters, sections, quotes, search, highlights, notes, optional bilingual support, light/dark mode, and source attribution.
 ---
 
 # Immersive Reading
@@ -27,7 +27,7 @@ The skill separates judgment from deterministic work:
    or deployment requirements.
 
 2. **Source Handling**
-   Treat the project as a local reading/study edition by default. Do not block
+   Treat the project as a local reading/study space by default. Do not block
    the workflow with ownership questions. Preserve source title, author, and
    original link when they are known.
 
@@ -55,11 +55,10 @@ The skill separates judgment from deterministic work:
    ```
 
 6. **Preview**
-   Serve the generated folder locally, inspect desktop and mobile, and fix data/layout problems before delivery:
+   Serve the generated folder with the bundled local server, inspect desktop and mobile, and fix data/layout problems before delivery:
 
    ```bash
-   cd /path/to/output
-   python3 -m http.server 8791
+   node skills/immersive-reading/scripts/serve-reader.mjs /path/to/output --port 8791
    ```
 
 7. **Deploy**

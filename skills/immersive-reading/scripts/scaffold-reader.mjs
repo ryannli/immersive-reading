@@ -36,13 +36,13 @@ fs.writeFileSync(path.join(articlesDir, "index.js"), articleRegistry(article.id)
 const indexPath = path.join(outDir, "index.html");
 let html = fs.readFileSync(indexPath, "utf8");
 const title = textOf(article.title);
-const description = textOf(article.description) || "An independent reading edition for close study.";
+const description = textOf(article.description) || "A bespoke learning space for close study.";
 html = html
-  .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(title)} · Reading Edition</title>`)
+  .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(title)} · Immersive Reading</title>`)
   .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeAttr(description)}">`)
-  .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${escapeAttr(title)} · Reading Edition">`)
+  .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${escapeAttr(title)} · Immersive Reading">`)
   .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${escapeAttr(description)}">`)
-  .replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${escapeAttr(title)} · Reading Edition">`)
+  .replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${escapeAttr(title)} · Immersive Reading">`)
   .replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${escapeAttr(description)}">`);
 fs.writeFileSync(indexPath, html);
 
@@ -51,8 +51,7 @@ console.log(JSON.stringify({
   outDir,
   article: article.id,
   next: [
-    `cd ${outDir}`,
-    "python3 -m http.server 8791"
+    `node ${path.join(skillRoot, "scripts", "serve-reader.mjs")} ${outDir} --port 8791`
   ]
 }, null, 2));
 

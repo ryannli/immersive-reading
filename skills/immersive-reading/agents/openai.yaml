@@ -1,4 +1,4 @@
 interface:
   display_name: "Immersive Reading"
-  short_description: "Build immersive reading websites"
-  default_prompt: "Use $immersive-reading to turn this long-form source into an immersive Reading Edition."
+  short_description: "Create bespoke learning spaces"
+  default_prompt: "Use $immersive-reading to turn this long-form source into a bespoke learning space."

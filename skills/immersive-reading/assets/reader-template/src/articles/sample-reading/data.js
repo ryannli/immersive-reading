@@ -7,7 +7,7 @@ const article = {
   },
   author: "Source Author",
   description: {
-    en: "An independent reading edition for close study, notes, and source attribution."
+    en: "A bespoke learning space for close study, notes, and source attribution."
   },
   source: {
     label: "Source material",
@@ -30,11 +30,11 @@ const article = {
     ariaLabel: "Reading entrance",
     video: "assets/door-entrance-8s-scrub.mp4",
     poster: "assets/door-entrance-8s-poster.jpg",
-    purpose: "Independent reading edition",
+    purpose: "Independent learning space",
     cue: "Enter"
   },
   hero: {
-    note: "A generated reading edition of the source material.",
+    note: "A generated learning space for the source material.",
     typedLine: "This source has a structure you can learn.",
     primaryAction: "Start reading",
     scrollCue: "Scroll",
@@ -45,7 +45,7 @@ const article = {
       en: "Replace this closing line with a final quote from the source."
     },
     quoteEmphasis: "",
-    credit: "Generated as a reading edition for close study."
+    credit: "Generated as a learning space for close study."
   },
   chapters: [
     {
