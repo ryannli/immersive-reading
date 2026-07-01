@@ -67,19 +67,23 @@ Example: Paul Graham's epic essay,
 
 ## How It Works
 
+<p align="center">
+  <img src="docs/media/how-it-works.png" alt="Source material flowing through an agent into an interactive reading space" width="100%">
+</p>
+
 <table>
   <tr>
     <td align="center" width="33%">
-      <strong>1. Bring source material</strong><br>
-      <sub>Essay, blog post, lecture, transcript, note, or paper.</sub>
+      <strong>1. Drop in the source</strong><br>
+      <sub>Paste a link, upload a file, or point the agent at a long-form note.</sub>
     </td>
     <td align="center" width="33%">
-      <strong>2. Let the skill shape it</strong><br>
-      <sub>Chapters, sections, quotes, optional translation, and reader data.</sub>
+      <strong>2. Let the agent shape it</strong><br>
+      <sub>It finds chapters, sections, anchor quotes, study tools, and optional bilingual text.</sub>
     </td>
     <td align="center" width="33%">
-      <strong>3. Open the site</strong><br>
-      <sub>A polished Reading Edition with the interaction details already wired.</sub>
+      <strong>3. Open the reading space</strong><br>
+      <sub>A polished interactive site is generated with the reader experience already wired.</sub>
     </td>
   </tr>
 </table>
