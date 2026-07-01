@@ -40,6 +40,23 @@ function wordCount(text) {
   return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
+function validateMedia(path, media) {
+  if (!media) return;
+  if (!Array.isArray(media)) {
+    warnings.push(`${path} should be an array when present`);
+    return;
+  }
+  media.forEach((item, index) => {
+    const itemPath = `${path}[${index}]`;
+    const src = item?.src || item?.url || item?.href;
+    if (!src) warnings.push(`${itemPath} is missing src/url/href`);
+    const type = item?.type || "";
+    if ((!type || type === "image") && !textOf(item?.alt).trim()) {
+      warnings.push(`${itemPath} image media should include alt text`);
+    }
+  });
+}
+
 if (!article || typeof article !== "object") errors.push("default export must be an article object");
 if (!article.id || !/^[a-z0-9-]+$/.test(article.id || "")) errors.push("article.id must be kebab-case");
 requireText("title", article.title);
@@ -73,12 +90,14 @@ chapters.forEach((chapter, chapterIndex) => {
     const ideaPath = `${chapterPath}.ideas[${ideaIndex}]`;
     requireText(`${ideaPath}.take`, idea.take);
     requireText(`${ideaPath}.quote`, idea.quote);
+    validateMedia(`${ideaPath}.media`, idea.media);
     const paragraphs = Array.isArray(idea.paragraphs) ? idea.paragraphs : [];
     if (!paragraphs.length) errors.push(`${ideaPath}.paragraphs must include at least one paragraph`);
     paragraphs.forEach((paragraph, paragraphIndex) => {
       paragraphCount += 1;
       const paragraphPath = `${ideaPath}.paragraphs[${paragraphIndex}].text`;
       requireText(paragraphPath, paragraph.text);
+      validateMedia(`${ideaPath}.paragraphs[${paragraphIndex}].media`, paragraph.media);
       totalWords += wordCount(textOf(paragraph.text, primary?.code));
       if (translationLangs.some((lang) => textOf(paragraph.text, lang.code))) {
         translatedParagraphs += 1;

@@ -32,11 +32,45 @@ const chKick=n=>isPro(n)?'Prologue · the opening':`Chapter ${pad(n)} · of ${MO
 const secNo=(n,i)=>isPro(n)?'Opening':`Section ${n}.${i+1}`;
 const teaserNo=(n,i)=>isPro(n)?'':`${n}.${i+1}`;
 const nowLabel=n=>n<0?'The Beginning':(isPro(n)?'Prologue':`${chTag(n)} · ${textOf(DATA[n].title)}`);
-const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const escAttr=s=>esc(s).replace(/"/g,'&quot;');
 const fnref=t=>t.replace(/\[(\d+)\]/g,'<sup class="fnref" data-n="$1" tabindex="0" role="button">$1</sup>');
 const stripFn=t=>t.replace(/\[(\d+)\]/g,'');
 const renderTranslations=value=>translationEntries(value).map(([lang,text])=>`<span class="tr lang-${lang.code}" data-lang="${lang.code}" lang="${lang.code}">${esc(text)}</span>`).join('');
 const renderLocalized=value=>esc(textOf(value));
+function mediaType(item,src){
+  if(item.type)return item.type;
+  if(/\.(png|jpe?g|gif|webp|avif|svg)(\?|#|$)/i.test(src))return 'image';
+  if(/\.(mp4|webm|mov)(\?|#|$)/i.test(src))return 'video';
+  if(/\.(mp3|m4a|wav|ogg)(\?|#|$)/i.test(src))return 'audio';
+  return 'link';
+}
+function renderMedia(media){
+  if(!Array.isArray(media)||!media.length)return '';
+  return media.map((item)=>{
+    const src=item.src||item.url||item.href||'';
+    if(!src)return '';
+    const type=mediaType(item,src);
+    const alt=textOf(item.alt);
+    const caption=textOf(item.caption);
+    const credit=typeof item.credit==='object'?textOf(item.credit):(item.credit||'');
+    const href=item.href||item.originalUrl||item.sourceUrl||src;
+    const captionHtml=(caption||credit)?`<figcaption>${caption?esc(caption):''}${credit?`<span>${esc(credit)}</span>`:''}</figcaption>`:'';
+    if(type==='image'){
+      const image=`<img src="${escAttr(src)}" alt="${escAttr(alt)}" loading="lazy" decoding="async">`;
+      return `<figure class="source-media source-media-image reveal">${href?`<a href="${escAttr(href)}" target="_blank" rel="noopener">${image}</a>`:image}${captionHtml}</figure>`;
+    }
+    if(type==='video'){
+      const poster=item.poster?` poster="${escAttr(item.poster)}"`:'';
+      return `<figure class="source-media source-media-video reveal"><video src="${escAttr(src)}"${poster} controls playsinline preload="metadata"></video>${captionHtml}</figure>`;
+    }
+    if(type==='audio'){
+      return `<figure class="source-media source-media-audio reveal"><audio src="${escAttr(src)}" controls preload="metadata"></audio>${captionHtml}</figure>`;
+    }
+    const label=caption||alt||src;
+    return `<figure class="source-media source-media-link reveal"><a href="${escAttr(href)}" target="_blank" rel="noopener">${esc(label)} ↗</a>${credit?`<figcaption><span>${esc(credit)}</span></figcaption>`:''}</figure>`;
+  }).join('');
+}
 const DEFAULT_DOOR_VIDEO='assets/door-entrance-8s-scrub.mp4';
 const DEFAULT_DOOR_POSTER='assets/door-entrance-8s-poster.jpg';
 function heroTitleHTML(title){
@@ -130,8 +164,9 @@ DATA.forEach((c,n)=>{
     const art=ce('article',['sec',n===0&&i===0?'first':''].filter(Boolean).join(' '));art.id=`idea-${n}-${i}`;
     const paras=idea.paragraphs.map((paragraph,pi)=>{
       const base=textOf(paragraph.text);
-      return `<p class="pp reveal" data-pid="${n}-${i}-${pi}"><span class="en">${renderPara(base,textOf(idea.quote),`${n}-${i}`)}</span>${renderTranslations(paragraph.text)}</p>`;
+      return `<p class="pp reveal" data-pid="${n}-${i}-${pi}"><span class="en">${renderPara(base,textOf(idea.quote),`${n}-${i}`)}</span>${renderTranslations(paragraph.text)}</p>${renderMedia(paragraph.media)}`;
     }).join('');
+    const sectionMedia=renderMedia(idea.media);
     const notes=(idea.footnotes&&idea.footnotes.length)
       ? `<div class="fn-list reveal"><div class="fn-h">Notes</div>${idea.footnotes.map(f=>`<div class="fn" data-n="${f.n}"><span class="fn-n">${f.n}</span><span class="fn-t"><span class="en">${esc(textOf(f.text))}</span>${renderTranslations(f.text)}</span></div>`).join('')}</div>`
       : '';
@@ -142,7 +177,7 @@ DATA.forEach((c,n)=>{
         </div>
         <blockquote class="sec-quote reveal"><span class="qm">“</span>${renderLocalized(idea.quote)}</blockquote>
       </div>
-      <div class="sec-prose">${paras}${notes}</div>`;
+      <div class="sec-prose">${sectionMedia}${paras}${notes}</div>`;
     art.querySelectorAll('.fnref').forEach(rf=>rf.addEventListener('click',()=>flashNote(art,rf.dataset.n)));
     bw.appendChild(art);
   });

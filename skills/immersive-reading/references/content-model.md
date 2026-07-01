@@ -76,14 +76,58 @@ Each section inside `ideas[]`:
 {
   take: { en: "Section title written as a clear claim" },
   quote: { en: "Short memorable quote or excerpt." },
+  media: [
+    {
+      type: "image",
+      src: "assets/source/diagram-1.jpg",
+      alt: { en: "Diagram showing the source author's core model." },
+      caption: { en: "Original diagram from the source article." },
+      credit: "Source author"
+    }
+  ],
   paragraphs: [
-    { text: { en: "Paragraph text." } }
+    {
+      text: { en: "Paragraph text." },
+      media: [
+        {
+          type: "image",
+          src: "https://example.com/source-image.jpg",
+          alt: { en: "Screenshot from the original source." },
+          caption: { en: "A source image kept in context." }
+        }
+      ]
+    }
   ],
   footnotes: [
     { n: 1, text: { en: "Note text." } }
   ]
 }
 ```
+
+## Source Media
+
+If the original material includes meaningful media, do not silently drop it.
+Capture images, diagrams, screenshots, audio, video, and embeds that carry
+meaning for the reader.
+
+Represent media on either a section (`idea.media`) or a specific paragraph
+(`paragraph.media`). Use:
+
+```js
+{
+  type: "image", // image, video, audio, or link
+  src: "assets/source/example.jpg",
+  alt: { en: "Concise accessibility description." },
+  caption: { en: "Optional caption shown under the media." },
+  credit: "Optional source credit",
+  href: "https://example.com/original-media"
+}
+```
+
+Prefer local files under `assets/source/` for stable images and diagrams. If
+downloading is not practical, use the original media URL as `src` and keep an
+`href` back to the source. Always include useful `alt` text for images. Use
+captions to explain why the media matters instead of decorating the page.
 
 ## Bilingual Mode
 

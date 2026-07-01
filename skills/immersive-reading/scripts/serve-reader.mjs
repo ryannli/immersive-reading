@@ -68,9 +68,14 @@ function contentType(filePath) {
     ".json": "application/json; charset=utf-8",
     ".jpg": "image/jpeg",
     ".jpeg": "image/jpeg",
+    ".gif": "image/gif",
     ".mp4": "video/mp4",
+    ".mp3": "audio/mpeg",
+    ".ogg": "audio/ogg",
     ".png": "image/png",
-    ".svg": "image/svg+xml"
+    ".svg": "image/svg+xml",
+    ".webm": "video/webm",
+    ".webp": "image/webp"
   }[ext] || "application/octet-stream";
 }
 

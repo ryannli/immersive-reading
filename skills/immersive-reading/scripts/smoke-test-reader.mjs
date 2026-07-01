@@ -31,6 +31,9 @@ for (const file of required) {
 for (const file of walk(root)) {
   if (!/\.(html|js|css|json|md)$/.test(file)) continue;
   const text = fs.readFileSync(file, "utf8");
+  if (file.includes(`${path.sep}src${path.sep}articles${path.sep}`)) {
+    checkLocalSourceMedia(file, text);
+  }
   for (const needle of forbidden) {
     if (text.includes(needle)) {
       errors.push(`Forbidden string "${needle}" found in ${path.relative(root, file)}`);
@@ -54,4 +57,14 @@ function walk(dir) {
     else files.push(full);
   }
   return files;
+}
+
+function checkLocalSourceMedia(file, text) {
+  const matches = text.matchAll(/["'`](assets\/source\/[^"'`]+)["'`]/g);
+  for (const match of matches) {
+    const rel = match[1];
+    if (!fs.existsSync(path.join(root, rel))) {
+      errors.push(`Missing source media ${rel} referenced in ${path.relative(root, file)}`);
+    }
+  }
 }

@@ -30,6 +30,12 @@ The skill separates judgment from deterministic work:
    Treat the project as a local reading/study space by default. Do not block
    the workflow with ownership questions. Preserve source title, author, and
    original link when they are known.
+   If the original source contains meaningful media (images, diagrams,
+   screenshots, embeds, audio, or video), preserve it as part of the learning
+   site. Prefer downloading stable media into the generated site's
+   `assets/source/` folder; otherwise keep the original media URL. Add the
+   media to the relevant section or paragraph data with alt text, captions, and
+   source credit when available, then verify it renders in preview.
 
 3. **Content Conversion**
    Read `references/content-model.md` and produce one `article-data.js` file matching the template schema.

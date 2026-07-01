@@ -91,12 +91,22 @@ Example: Paul Graham's epic essay,
 <details open>
 <summary><strong>Claude Code</strong></summary>
 
-Install and run it as a Claude Code plugin:
+Install and run it as a Claude Code plugin. Send these as four separate
+Claude Code messages:
 
 ```text
 /plugin marketplace add ryannli/immersive-reading
+```
+
+```text
 /plugin install immersive-reading@immersive-reading
+```
+
+```text
 /reload-plugins
+```
+
+```text
 /immersive-reading:immersive-reading
 ```
 
