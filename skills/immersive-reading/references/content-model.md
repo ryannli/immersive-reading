@@ -50,6 +50,10 @@ const article = {
 export default article;
 ```
 
+Keep the bundled `door.video` and `door.poster` paths unless the user provides
+custom entrance media. Do not replace the entrance with only a static hero
+image; the default video is what gives the opening its scroll-scrub motion.
+
 ## Chapters And Sections
 
 Use `chapters[]` for the major learning arc. In normal long-form content, prefer 5-14 chapters. Very short content can use 2-4 chapters.

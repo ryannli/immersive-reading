@@ -8,7 +8,9 @@ const required = [
   "src/app.js",
   "src/frontier.js",
   "src/styles.css",
-  "src/articles/index.js"
+  "src/articles/index.js",
+  "assets/door-entrance-8s-scrub.mp4",
+  "assets/door-entrance-8s-poster.jpg"
 ];
 const forbidden = [
   "createReaderMetrics",

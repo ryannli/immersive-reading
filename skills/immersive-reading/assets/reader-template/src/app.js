@@ -37,6 +37,8 @@ const fnref=t=>t.replace(/\[(\d+)\]/g,'<sup class="fnref" data-n="$1" tabindex="
 const stripFn=t=>t.replace(/\[(\d+)\]/g,'');
 const renderTranslations=value=>translationEntries(value).map(([lang,text])=>`<span class="tr lang-${lang.code}" data-lang="${lang.code}" lang="${lang.code}">${esc(text)}</span>`).join('');
 const renderLocalized=value=>esc(textOf(value));
+const DEFAULT_DOOR_VIDEO='assets/door-entrance-8s-scrub.mp4';
+const DEFAULT_DOOR_POSTER='assets/door-entrance-8s-poster.jpg';
 function heroTitleHTML(title){
   const words=title.trim().split(/\s+/);
   const split=Math.max(1,Math.ceil(words.length/2));
@@ -52,7 +54,7 @@ function applyArticleChrome(){
   const meta=document.querySelector('meta[name="description"]');if(meta)meta.content=textOf(ARTICLE.description);
   const brand=$('.brand');if(brand)brand.textContent=textOf(ARTICLE.title);
   const door=$('#doorIntro');if(door)door.setAttribute('aria-label',ARTICLE.door?.ariaLabel||'Reading entrance');
-  const video=$('#doorIntroVideo');if(video){video.src=ARTICLE.door?.video||video.src;video.poster=ARTICLE.door?.poster||video.poster;}
+  const video=$('#doorIntroVideo');if(video){video.src=ARTICLE.door?.video||video.getAttribute('src')||DEFAULT_DOOR_VIDEO;video.poster=ARTICLE.door?.poster||video.getAttribute('poster')||DEFAULT_DOOR_POSTER;}
   const doorLabel=$('.door-intro-label');if(doorLabel)doorLabel.innerHTML=`<div>${esc(ARTICLE.source.label)} <span>${esc(ARTICLE.source.authorLine)}</span></div><div class="door-intro-purpose">${esc(ARTICLE.door?.purpose||'')}</div>`;
   const heroTitle=$('#heroTitle');if(heroTitle)heroTitle.setAttribute('aria-label',textOf(ARTICLE.title));
   const heroAuthor=$('.hero-author');if(heroAuthor)heroAuthor.innerHTML=`<span>By ${esc(ARTICLE.author)}</span><a class="hero-original-link" href="${esc(ARTICLE.source.url)}" target="_blank" rel="noopener" aria-label="${esc(ARTICLE.hero?.originalLinkLabel||'See original')}">See Original <span aria-hidden="true">↗</span></a>`;
