@@ -2,9 +2,9 @@
 
 # Immersive Reading
 
-<strong>Turn dense long-form ideas into interactive reading spaces people want to enter.</strong>
+<strong>Turn dense long-form essays, posts, and papers into bespoke learning spaces that feel delightful to explore.</strong>
 
-Drop in a link, essay, transcript, note, or paper. Get back a polished learning
+Bring a link, essay, transcript, note, or paper. Get back a polished learning
 space with chapters, source attribution, search, highlights, notes, and optional
 bilingual support.
 

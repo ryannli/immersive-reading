@@ -1,7 +1,7 @@
 {
   "name": "immersive-reading",
   "version": "0.1.0",
-  "description": "Build interactive reading spaces from long-form source material.",
+  "description": "Turn long-form material into bespoke learning spaces.",
   "license": "MIT",
   "engines": {
     "node": ">=18"
