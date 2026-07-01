@@ -91,25 +91,17 @@ Example: Paul Graham's epic essay,
 <details open>
 <summary><strong>Claude Code</strong></summary>
 
-Option A: install as a Claude Code plugin.
-
-Run these as two separate Claude Code messages:
+Install and run it as a Claude Code plugin:
 
 ```text
 /plugin marketplace add ryannli/immersive-reading
-```
-
-Then:
-
-```text
 /plugin install immersive-reading@immersive-reading
+/reload-plugins
+/immersive-reading:immersive-reading https://paulgraham.com/greatwork.html
 ```
 
-Use it in Claude Code with:
-
-```text
-/immersive-reading:immersive-reading
-```
+Replace the last URL with any essay, post, transcript, note, paper, or local
+file you want to turn into a learning space.
 
 Or install it as an open agent skill:
 
